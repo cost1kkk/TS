@@ -1,5 +1,4 @@
 # TS
-# Theoretical Study
 
 ## Test-Driven Development (TDD)
 Test-Driven Development (TDD) is a software development methodology that emphasizes writing tests before implementing the actual code. The core principles of TDD include:
@@ -32,15 +31,6 @@ Behavior-Driven Development (BDD) extends TDD by emphasizing human-readable desc
 ### Disadvantages of BDD:
 - Requires learning additional tools/frameworks.
 - Writing effective scenarios may require more effort.
-
-## Comparison: When to Use TDD vs. BDD
-| Criteria | TDD | BDD |
-|----------|-----|-----|
-| Focus | Code correctness | Application behavior |
-| Audience | Developers | Developers, Testers, Product Owners |
-| Test Style | Unit Tests | Acceptance Tests |
-| Readability | Technical | Human-readable (Given-When-Then) |
-| Best for | Core functionalities, algorithms | User stories, business logic validation |
 
 # Practical Implementation
 
@@ -94,17 +84,39 @@ Behavior-Driven Development (BDD) extends TDD by emphasizing human-readable desc
 3. **Run Tests:**
    ```bash
    behave
-   ```
+    ```
+4. **OUTPUT:**
+TDD Output
+`python test_calculator.py`
+```
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
 
-# Final Report
+OK
+```
+
+
+---
+
+BDD Output 
+When running `behave`
+```
+Feature: Calculator Addition # features/calculator.feature
+  Scenario: Add two numbers  # features/calculator.feature:2
+    Given I have a calculator   # steps/calculator_steps.py:5
+    When I add 2 and 3          # steps/calculator_steps.py:9
+    Then the result should be 5 # steps/calculator_steps.py:14
+
+1 feature passed, 0 failed, 0 skipped
+1 scenario passed, 0 failed, 0 skipped
+3 steps passed, 0 failed, 0 skipped
+```
 
 ## Implementation Process & Challenges
 - **TDD:** The biggest challenge was writing tests before implementation, which required carefully defining expected behavior first.
 - **BDD:** Writing readable scenarios was straightforward, but setting up the testing framework required additional effort.
 
-## Source Code & Test Results
-- **TDD:** All unit tests passed successfully.
-- **BDD:** All feature tests executed correctly, confirming expected behavior.
 
 ## Conclusion
 TDD is best suited for ensuring low-level code correctness, while BDD excels in defining application behavior. Both methodologies improve software quality but cater to different aspects of development.
